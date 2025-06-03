@@ -1,0 +1,301 @@
+/* === Portfolio Clean CSS === */
+
+/* Universal Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181c24;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 60px 0 40px 0;
+    text-align: center;
+    position: relative;
+}
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 24px rgba(79,140,255,0.18);
+    margin-top: 20px;
+    background: #fff;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+nav ul li a:hover {
+    color: #ffe066;
+}
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.content p {
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+}
+.tagline {
+    font-size: 1.1em;
+    background: rgba(255,255,255,0.13);
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    color: #ffe066;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.social-icons {
+    margin-bottom: 18px;
+}
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.7em;
+    transition: color 0.2s, transform 0.2s;
+}
+.social-icons a:hover {
+    color: #ffe066;
+    transform: scale(1.2);
+}
+
+/* Main Content Background (for all sections after hero) */
+.main-bg {
+    position: relative;
+    z-index: 1;
+}
+.main-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('main-bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Section Styles (shared by all main sections) */
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section {
+    background: transparent;
+    padding: 60px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* About Card */
+.about-card {
+    background: rgba(0,0,0,0.4);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+.about-section h2,
+.skills-section h2,
+.projects-section h2,
+.contact-section h2,
+.education-section h2,
+.experience-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #ffe066;
+}
+.about-section p {
+    font-size: 1.18rem;
+    color: #fff;
+    line-height: 1.7;
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.skill-item {
+    background: rgba(0,0,0,0.3);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    padding: 28px 36px;
+    min-width: 200px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.skill-item:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+.skill-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #00d9ff;
+}
+.skill-bar {
+    background: #e0e0e0;
+    border-radius: 8px;
+    height: 10px;
+    width: 100%;
+    margin-top: 8px;
+    overflow: hidden;
+}
+.skill-level {
+    display: block;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00d9ff 0%, #005fa3 100%);
+    transition: width 0.7s;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.project-card {
+    background: rgba(0,0,0,0.3);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.15);
+}
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #eaeaea;
+}
+.project-content {
+    padding: 22px 18px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #00d9ff;
+}
+.project-desc {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 18px;
+    flex: 1;
+}
+.project-links a {
+    color: #ffe066;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.2s;
+}
+.project-links a:hover {
+    color: #00d9ff;
+    text-decoration: underline;
+}
+
+/* Contact */
+.contact-form {
+    max-width: 420px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.3);
+    padding: 32px 28px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 7px;
+    background: #f5f5f5;
+    color: #232526;
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 2px #00d9ff;
+}
+.contact-form button {
+    background: #00d9ff;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contact-form button:hover {
+    background: #005fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .skills-list {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .about-section, .skills-section, .projects-section, .contact-section {
+        padding: 32px 0;
+    }
+    .content h1 {
+        font-size: 2rem;
+    }
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
+}
